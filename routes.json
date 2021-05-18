@@ -1,0 +1,14 @@
+[
+    {
+        "method": "post",
+        "path": "/login",
+        "file": "login.json",
+        "status": 200
+    },
+    {
+        "method": "get",
+        "path": "/users",
+        "file": "users_list.json",
+        "status": 200
+    }
+]
