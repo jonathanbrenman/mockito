@@ -1,10 +1,14 @@
 const routes  = require('./routes.json');
 const express = require('express');
+const cors    = require('cors');
 const app = express();
+var port = process.env.PORT || 98765;
 
 if (!routes) {
     throw "Missing ./routes.json";
 }
+
+app.use(cors());
 
 const mocksFolder = "./mocks";
 
@@ -21,6 +25,6 @@ app.use("*", (req, res) => {
     });
 });
 
-app.listen(process.env.PORT, () =>
-  console.log(`Fake Rest API started at http://localhost:${process.env.PORT}`),
+app.listen(port, "0.0.0.0", () =>
+  console.log(`Fake Rest API started at http://localhost:${port}`),
 );
